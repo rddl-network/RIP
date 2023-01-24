@@ -1,3 +1,3 @@
-# RDDL Improvment Proposals
+# RDDL Improvement Proposals
 
 
