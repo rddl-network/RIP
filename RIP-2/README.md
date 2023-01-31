@@ -1,5 +1,5 @@
 ```
-shortname: RIP-1
+shortname: RIP-2
 name: Consensus-Oriented Specification System
 type: Meta
 status: Draft
@@ -12,8 +12,8 @@ This document describes a consensus-oriented specification system (COSS) for bui
 This specification is based on [unprotocols.org 2/COSS](https://rfc.unprotocols.org/2/) and on [EIP1 - EIP Purpose and Guidelines](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md).
 
 ## Change Process
-This document is governed by the [RIP-1 (COSS)](../1/README.md).
-f
+This document is governed by the [RIP-1 (C4)](../RIP-1/README.md).
+
 ## Language
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) \[[RFC2119](https://tools.ietf.org/html/rfc2119)\] \[[RFC8174](https://tools.ietf.org/html/rfc8174)\] when, and only when, they appear in all capitals, as shown here.
 
@@ -48,7 +48,7 @@ There are three types of RIPs:
 * A **Meta RIP** describes a process surrounding RDDL or proposes a change to a process.
 
 ### RIP Format
-A RIP is a set of Markdown documents (the main file SHOULD be called `README.md`), together with comments, attached files, and other resources. A RIP is identified by its number (e.g. this RIP is **RIP-1**). The number of the RIP is also the name of the directory where its files are stored.
+A RIP is a set of Markdown documents (the main file SHOULD be called `README.md`), together with comments, attached files, and other resources. A RIP is identified by its number (e.g. this RIP is **RIP-2**). The number of the RIP is also the name of the directory where its files are stored.
 
 Every RIP (including branches) carries a different number. New versions of the same RIP have new numbers.
 
@@ -57,7 +57,7 @@ Each RIP MUST customize and include this header:
 ````
 ```
 shortname: [number/shortname]
-name: [Full name of the BEP]
+name: [Full name of the RIP]
 type: [standard | informational | meta ]
 status: [raw | draft | stable | deprecated | retired | deleted]
 editor: [Editor Name <email address>]
@@ -82,7 +82,7 @@ Each RIP SHOULD include the following sections:
 
 1. **Implementation**. The implementations must be completed before any RIP is given status "stable", but it need not be completed before the RIP is accepted. While there is merit to the approach of reaching consensus on the RIP and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
 
-1. **Copyright Waiver**. Except for RIP-1 (C4) and RIP-1 (COSS), all RIPs MUST be released to the public domain. To do that, the following block of HTML SHOULD be used in the RIP's source Markdown file. ([HTML is valid Markdown](https://daringfireball.net/projects/markdown/syntax#html).)
+1. **Copyright Waiver**. Except for RIP-1 (C4) and RIP-2 (COSS), all RIPs MUST be released to the public domain. To do that, the following block of HTML SHOULD be used in the RIP's source Markdown file. ([HTML is valid Markdown](https://daringfireball.net/projects/markdown/syntax#html).)
 
 ```html
 <p xmlns:dct="http://purl.org/dc/terms/">
@@ -128,7 +128,7 @@ value. Only Raw and Draft RIPs can be deleted.
 A RIP MUST have a single responsible editor, the only person
 who SHALL change the status of the RIP through the lifecycle stages.
 
-A RIP MAY also have additional contributors who contribute changes to it. It is RECOMMENDED to use the [C4 process](../1/README.md) to maximize the scale and diversity of contributions.
+A RIP MAY also have additional contributors who contribute changes to it. It is RECOMMENDED to use the [C4 process](../RIP0001/README.md) to maximize the scale and diversity of contributions.
 
 The editor is responsible for accurately maintaining the state of RIPs and for handling all comments on the RIP.
 
@@ -141,7 +141,7 @@ Any member of the domain MAY branch a RIP at any point. This is done by copying 
 
 The responsible editor of a branched RIP is the person who makes the branch.
 
-Branches, including added contributions, SHOULD be dedicated to the public domain using CC0 (just like the original BEP). This means that contributors are guaranteed the right to merge changes made in branches back into their original RIPs.
+Branches, including added contributions, SHOULD be dedicated to the public domain using CC0 (just like the original RIP). This means that contributors are guaranteed the right to merge changes made in branches back into their original RIPs.
 
 Technically speaking, a branch is a *different* RIP, even if it carries the same name. Branches have no special status except that accorded by the community.
 
@@ -157,7 +157,7 @@ Where possible editors and contributors are encouraged to:
 
 ## License
 Copyright (c) 2008-16 Yurii Rashkovskii <yrashk@gmail.com>, Pieter Hintjens <ph@imatix.com>, André Rebentisch <andre@openstandards.de>, Alberto Barrionuevo <abarrio@opentia.es>, Chris Puttick <chris.puttick@thehumanjourney.net>
-Copyright (c) 2022 IPDB Foundation e.V.
+Copyright (c) 2023 RDDL Foundation
 
 This RIP is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
