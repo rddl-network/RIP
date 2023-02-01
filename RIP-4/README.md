@@ -7,47 +7,77 @@ editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```
 
-**Abstract**. This RIP defines the requirements a Trust Anchor needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
+## **Abstract**
+This RIP defines the requirements a Trust Anchor needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
 
-**Motivation**. The goal of this RIP is to list the requirements in a comprehensive and way that can be easily understood.
+## **Motivation**
+ The goal of this RIP is to list the requirements in a comprehensive way so that the requirements can be easily understood.
 
 
-**Problem Breakdown** Trust Anchors contain a business logic that interacts with a machine, a smart meter, the network, and most likely at least one storage solution. The purpose of Trust Anchors is to 
+## **Problem Breakdown**
+
+#### Definitions:
+* ***CID*** Content identifier as defined at [IPFS](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid)
+* ***CID-data*** The data that results in the given CID.
+
+Trust Anchors contain a business logic that interacts with a machine, a smart meter, the network, and most likely at least one storage solution. The purpose of Trust Anchors is to 
 1. notarize data, to
 1. prove origin and provenance of data, to
 1. prove integrity and authenticity of data, and to
 1. participate in the POP of RDDL Network.
  
-The Trust Anchor needs to manage a BIP44 wallet in order 
-* to notarize 
-* prove origin and provenance
+The Trust Anchor needs to manage a BIP44 wallet in order to
+* notarize,
+* prove origin and provenance, and
 * prove integrity and authenticity 
 of data.
 
 A data management and mapping logic and functionality is needed to successfully participate in the POP.
+The POP and others actor want to verify and challenge the attested data and CIDs. This process is as follows:
+1. A CID is read from the ledger
+1. The URL to download the CID-data is looked up at https://cid-resolver.rddl.io 
+1. The CID-data is downloaded by issuing a GET request to the retrieved URL
+1. The CID' of the CID-data is computed and compared to the CID of step one. 
+1. The CID - CID--ata is valid if the comparison CID == CID' is True.
 
-**Specification**:
+## **Specification**
 
-***BIP44 Wallet*** It is recommended that a the [0x21e8 Service](https://github.com/rddl-network/0x21e8) is used as the reference [BIP44 wallet](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). 
+### ***BIP44 Wallet***
+It is recommended that a the [0x21e8 Service](https://github.com/rddl-network/0x21e8) is used as the reference [BIP44 wallet](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). 
 
-***Data management & mapping***
+### ***Data management & mapping***
 
 POP expects that: 
-1. all notarized CID hashes can be looked up via cid-resolver.io.
-1. given a CID, a valid download link for the CID data can be retrieved via the [cid-resolver](https://cid-resolver.rddl.io)
-1. the CID data can be downloaded
-1. the downloaded data results in the CID that is equal to the one used for the lookup
+1. The Trust Anchor registers a valid key/value pair at https://cid-resolver.rddl.io with CID being the key and the value being a valid URL returning the CID-data for the given CID.
+1. All notarized CIDs can be looked up via https://cid-resolver.rddl.io.
+1. Given a CID, a valid download URL for the CID-data can be retrieved via the [cid-resolver](https://cid-resolver.rddl.io/docs)
+1. The CID-data can be retrieved by executing a GET request to the retrieved download URL
+1. the downloaded CID-data results in a CID that is equal to the one used for the lookup
 
 
-***cid-resolver.rddl.io***
+#### ***cid-resolver.rddl.io***
 Details about the restful service can be found at 
 * [API docs](https://cid-resolver.rddl.io/docs)
 * [Source code](https://github.com/rddl-network/cid-resolver)
 
+The CID resolver stores < CID, URL > pairs like
+```json
+{
+  "cid": "bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm",
+  "url": "https://bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm.ipfs.w3s.link"
+}
+```
+and enables actors to lookup download links for CID-data for a given CID.
+```
+https://cid-resolver.rddl.io/entry/cid?cid=bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm
+```
 
-The technical specification should describe the syntax and semantics of any new feature. The specification must address the exact issues described in the solution breakdown and should describe how it addresses them. The specification should be detailed enough to allow competing, interoperable implementations. It MAY describe the impact on data models, API endpoints, security, performance, end users, deployment, documentation, and testing.
+#### ***CID-data resolver***
 
-1. **Rationale**. The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.
+Whatever DB/storage solution is use by the Trust Anchor or the operator. The only task being asked by the network is to resolve a CID to its CID-data.
+Hence, a simple service with the following API should be sufficient to suit the needs of the RDDL protocol:
+
+* GET /cid-data/<cid> 
 
 
 1. **Implementation**. The implementations must be completed before any RIP is given status "stable", but it need not be completed before the RIP is accepted. While there is merit to the approach of reaching consensus on the RIP and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
