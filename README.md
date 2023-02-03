@@ -10,7 +10,7 @@ The process to add or change a RIP is the following:
 
 Short Name   | Title                                                         | Type     | Status     | Editor
 -------------|---------------------------------------------------------------|----------|------------|-------
-[PRP-1](RIP-1)   | Collective Code Construction Contract                     | Meta     | Draft      | Jürgen Eckel
-[PRP-2](RIP-2)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
-[PRP-3](RIP-3)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
+[RIP-1](RIP-1)   | Collective Code Construction Contract                     | Meta     | Draft      | Jürgen Eckel
+[RIP-2](RIP-2)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
+[RIP-3](RIP-3)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
 
