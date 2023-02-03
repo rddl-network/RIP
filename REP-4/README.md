@@ -1,5 +1,5 @@
 ```
-shortname: RIP-4
+shortname: REP-4
 name: Trust Anchor Requirements
 type: standard
 status: raw
@@ -8,10 +8,10 @@ contributors:
 ```
 
 ## **Abstract**
-This RIP defines the requirements a Trust Anchor needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
+This REP defines the requirements a Trust Anchor needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
 
 ## **Motivation**
- The goal of this RIP is to list the requirements in a comprehensive way so that the requirements can be easily understood.
+ The goal of this REP is to list the requirements in a comprehensive way so that the requirements can be easily understood.
 
 
 ## **Problem Breakdown**
@@ -81,7 +81,7 @@ Hence, a simple service with the following API should be sufficient to suit the 
 
 
 ## **Implementation**
-The implementations must be completed before any RIP is given status "stable", but it need not be completed before the RIP is accepted. While there is merit to the approach of reaching consensus on the RIP and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
+The implementations must be completed before any REP is given status "stable", but it need not be completed before the REP is accepted. While there is merit to the approach of reaching consensus on the REP and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
 
 ## **Copyright Waiver**
-Except for RIP-1 (C4) and RIP-2 (COSS), all RIPs MUST be released to the public domain. To do that, the following block of HTML SHOULD be used in the RIP's source Markdown file. ([HTML is valid Markdown](https://daringfireball.net/projects/markdown/syntax#html).)
+Except for REP-1 (C4) and REP-2 (COSS), all REPs MUST be released to the public domain. To do that, the following block of HTML SHOULD be used in the REP's source Markdown file. ([HTML is valid Markdown](https://daringfireball.net/projects/markdown/syntax#html).)
