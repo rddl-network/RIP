@@ -1,5 +1,5 @@
 ```
-shortname: RIP-1
+shortname: REP-1
 name: Collective Code Construction Contract
 type: Meta
 status: Draft
@@ -46,7 +46,7 @@ C4 is meant to provide a reusable optimal collaboration model for open source so
 
 1. The project SHALL use the GNU Affero General Public License.
 1. All contributions to the project source code ("patches") SHALL use the same license as the project.
-1. All contributors contributing a patch MUST do and understand the steps listed in [RIP-3](../RIP-3).
+1. All contributors contributing a patch MUST do and understand the steps listed in [REP-3](../REP-3).
 
 ### 2.3. Patch Requirements
 
@@ -89,7 +89,7 @@ C4 is meant to provide a reusable optimal collaboration model for open source so
 
 ### 2.6. Evolution of Public Contracts
 
-Definition: **Public Contracts** _noun_ - All public APIs and protocols. In other words, read the RIPs (and the things they reference) and you'll have a good start.
+Definition: **Public Contracts** _noun_ - All public APIs and protocols. In other words, read the REPs (and the things they reference) and you'll have a good start.
 
 1. All Public Contracts (APIs or protocols) SHALL be documented.
 1. All Public Contracts SHOULD have space for extensibility and experimentation.
@@ -119,8 +119,8 @@ Definition: **Public Contracts** _noun_ - All public APIs and protocols. In othe
 Copyright (c) 2009-2016 Pieter Hintjens.
 Copyright (c) 2022 RDDL Foundation
 
-This RIP is free software; you can redistribute it and/or modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+This REP is free software; you can redistribute it and/or modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
-This RIP is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This REP is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses>.

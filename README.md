@@ -1,17 +1,17 @@
-# RDDL Improvement Proposals
+# RDDL Enhancement Proposals
 
-This repository is the home of all RDDL Improvement Proposals (RIPs), along with ideas for new ones and discussions around proposed or existing ones.
-The process to add or change a RIP is the following:
+This repository is the home of all RDDL Improvement Proposals (REPs), along with ideas for new ones and discussions around proposed or existing ones.
+The process to add or change a REP is the following:
 
-- The RIP life-cycle SHOULD follow the life-cycle defined in [RIP-2 (our variant of COSS)](./RIP-2).
-- Non-cosmetic changes are allowed only on [Raw](./RIP-2#raw-rips) and [Draft](./RIP-2#draft-rips) specifications.
+- The REP life-cycle SHOULD follow the life-cycle defined in [REP-2 (our variant of COSS)](./REP-2).
+- Non-cosmetic changes are allowed only on [Raw](./REP-2#raw-reps) and [Draft](./REP-2#draft-reps) specifications.
 
-## Current RIPs
+## Current REPs
 
 Short Name   | Title                                                         | Type     | Status     | Editor
 -------------|---------------------------------------------------------------|----------|------------|-------
-[RIP-1](RIP-1)   | Collective Code Construction Contract                     | Meta     | Draft      | Jürgen Eckel
-[RIP-2](RIP-2)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
-[RIP-3](RIP-3)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
-[RIP-4](RIP-4)   | Trust Anchor Requirements                                 | Standard | Raw        | Jürgen Eckel
+[REP-1](REP-1)   | Collective Code Construction Contract                     | Meta     | Draft      | Jürgen Eckel
+[REP-2](REP-2)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
+[REP-3](REP-3)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
+[REP-4](REP-4)   | Trust Anchor Requirements                                 | Standard | Raw        | Jürgen Eckel
 
