@@ -1,5 +1,5 @@
 ```
-shortname: RIP-3
+shortname: REP-3
 name: How to handle ALL pull requests
 type: Meta
 status: Draft
@@ -11,9 +11,9 @@ editor: Jürgen Eckel <juergen@riddleandcode.com>
 
 # Abstract
 
-This RIP says what a RDDL repository maintaner (i.e. someone with the ability to merge pull requests) must do when a pull request is submitted to any RDDL repository by anyone. Non-maintainers may also read it to find out what they should expect.
+This REP says what a RDDL repository maintainer (i.e. someone with the ability to merge pull requests) must do when a pull request is submitted to any RDDL repository by anyone. Non-maintainers may also read it to find out what they should expect.
 
-This RIP only covers the process for ensuring that contributions are licensed properly. It doesn't cover other aspects of pull request review.
+This REP only covers the process for ensuring that contributions are licensed properly. It doesn't cover other aspects of pull request review.
 
 # What to do
 
@@ -73,6 +73,6 @@ The Developer Certificate of Origin was developed by the Linux community and has
     <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
   </a>
   <br />
-  To the extent possible under law, all contributors to this RIP
-  have waived all copyright and related or neighboring rights to this RIP.
+  To the extent possible under law, all contributors to this REP
+  have waived all copyright and related or neighboring rights to this REP.
 </p>
