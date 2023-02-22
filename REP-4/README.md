@@ -1,6 +1,6 @@
 ```
 shortname: REP-4
-name: Trust Anchor Requirements
+name: HW-03 Requirements
 type: standard
 status: raw
 editor: Jürgen Eckel juergen@riddleandcode.com
@@ -8,7 +8,7 @@ contributors:
 ```
 
 ## **Abstract**
-This REP defines the requirements a Trust Anchor needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
+This REP defines the requirements a HW-03 needs to satisfy in order to be compliant to the RDDL network Proof of Productivity.
 
 ## **Motivation**
  The goal of this REP is to list the requirements in a comprehensive way so that the requirements can be easily understood.
@@ -20,13 +20,13 @@ This REP defines the requirements a Trust Anchor needs to satisfy in order to be
 * ***CID*** Content identifier as defined at [IPFS](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid)
 * ***CID-data*** The data that results in the given CID.
 
-Trust Anchors contain a business logic that interacts with a machine, a smart meter, the network, and most likely at least one storage solution. The purpose of Trust Anchors is to 
+HW-03s contain a business logic that interacts with a machine, a smart meter, the network, and most likely at least one storage solution. The purpose of HW-03s is to 
 1. notarize data, to
 1. prove origin and provenance of data, to
 1. prove integrity and authenticity of data, and to
 1. participate in the POP of RDDL Network.
  
-The Trust Anchor needs to manage a BIP44 wallet in order to
+The HW-03 needs to manage a BIP44 wallet in order to
 * notarize,
 * prove origin and provenance, and
 * prove integrity and authenticity 
@@ -43,12 +43,12 @@ The POP and others actor want to verify and challenge the attested data and CIDs
 ## **Specification**
 
 ### ***BIP44 Wallet***
-It is recommended that a the [0x21e8 Service](https://github.com/rddl-network/0x21e8) is used as the reference [BIP44 wallet](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). 
+It is recommended that the [0x21e8 Service](https://github.com/rddl-network/0x21e8) is used as the reference [BIP44 wallet](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). 0x21e8 has to connect to two different Trust Anchors.
 
 ### ***Data management & mapping***
 
 POP expects that: 
-1. The Trust Anchor registers a valid key/value pair at https://cid-resolver.rddl.io with CID being the key and the value being a valid URL returning the CID-data for the given CID.
+1. The HW-03 registers a valid key/value pair at https://cid-resolver.rddl.io with CID being the key and the value being a valid URL returning the CID-data for the given CID.
 1. All notarized CIDs can be looked up via https://cid-resolver.rddl.io.
 1. Given a CID, a valid download URL for the CID-data can be retrieved via the [cid-resolver](https://cid-resolver.rddl.io/docs)
 1. The CID-data can be retrieved by executing a GET request to the retrieved download URL
@@ -74,7 +74,7 @@ https://cid-resolver.rddl.io/entry/cid?cid=bafkreignwcoye67vn6edp23mj4llhpzzkgyu
 
 #### ***CID-data resolver***
 
-Whatever DB/storage solution is use by the Trust Anchor or the operator. The only task being asked by the network is to resolve a CID to its CID-data.
+Whatever DB/storage solution is use by the HW-03 or the operator. The only task being asked by the network is to resolve a CID to its CID-data.
 Hence, a simple service with the following API should be sufficient to suit the needs of the RDDL protocol:
 
 * GET /cid-data/<cid> 
