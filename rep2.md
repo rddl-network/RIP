@@ -103,7 +103,7 @@ Every REP has an independent lifecycle that documents clearly its current status
 
 A REP has six possible states that reflect its maturity and contractual weight:
 
-![Lifecycle diagram](lifecycle.png)
+![Lifecycle diagram](./data/REP-2/lifecycle.png)
 
 ### Raw REPs
 All new REPs are **raw** REPs. Changes to raw REPs can be unilateral and arbitrary. Those seeking to implement a raw REP should ask for it to be made a draft REP. Raw REPs have no contractual weight.
