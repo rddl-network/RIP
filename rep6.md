@@ -1,8 +1,8 @@
 ```
 shortname: REP-6
-name: Machine Authentication
+name: Machine Authentication - EdDSA
 type: standard
-status: raw
+status: draft
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```
@@ -17,72 +17,50 @@ This REP defines the mechanisms that are utilized to let machines authenticate t
 ## **Problem Breakdown**
 
 #### Definitions:
-* ***CID*** Content identifier as defined at [IPFS](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid)
-* ***CID-data*** The data that results in the given CID.
 * ***M2M*** Machine to machine
 
-RDDL Network enables machine based token economy. The machines notarize and tokenize data, are able to transfer and receive tokens, and act can autonomously act upon such kind of events. Not all activities are on-chain but are executed off-chain e.g. Proof of Productivity, or other verification and proofing schemes. Therefore mechanisms to authenticate machines are needed.
+RDDL Network enables machine based token economy. The machines notarize and tokenize data, are able to transfer and receive tokens, and can autonomously act upon such kind of events. Not all activities are on-chain but are executed off-chain e.g. Proof of Productivity, or other verification and proofing schemes. Therefore mechanisms to authenticate machines are needed.
 
+1. The [CID-Resolver](./rep4.md#specification) allows network nodes to register CID to URL mappings. Everyone is able to query these but registration of mapping is only granted to nodes. 
+1. The M2M communication protocol of RDDL Network being used during PoP is only accessible for legit network nodes. 
 
-
-HW-03s contain a business logic that interacts with a machine, a smart meter, the network, and most likely at least one storage solution. The purpose of HW-03s is to 
-1. notarize data, to
-1. prove origin and provenance of data, to
-1. prove integrity and authenticity of data, and to
-1. participate in the POP of RDDL Network.
- 
-The HW-03 needs to manage a BIP44 wallet in order to
-* notarize,
-* prove origin and provenance, and
-* prove integrity and authenticity 
-of data.
-
-A data management and mapping logic and functionality is needed to successfully participate in the POP.
-The POP and others actor want to verify and challenge the attested data and CIDs. This process is as follows:
-1. A CID is read from the ledger
-1. The URL to download the CID-data is looked up at https://cid-resolver.rddl.io 
-1. The CID-data is downloaded by issuing a GET request to the retrieved URL
-1. The CID' of the CID-data is computed and compared to the CID of step one. 
-1. The CID - CID--ata is valid if the comparison CID == CID' is True.
+Both use-cases express the need for a network node authentication mechanism and access mechanism.
+RDDL Network utilizes Planetmint using base58 encoded ED25519 key pairs. Therefore, EdDSA is used to perform the challenge-response authentication.
 
 ## **Specification**
 
-### ***BIP44 Wallet***
-It is recommended that the [0x21e8 Service](https://github.com/rddl-network/0x21e8) is used as the reference [BIP44 wallet](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). 0x21e8 has to connect to two different Trust Anchors.
+The authentication service comes with two methods:
 
-### ***Data management & mapping***
+1. GET /auth?public_key=<machine planetmint public key> returns the challenge that is to be signed
+1. POST auth/?public_key=<machine planetmint public key>&signature=<signature of the sha256 hashed challenge>' return a valid JWT token with a certain expiration time.
 
-POP expects that: 
-1. The HW-03 registers a valid key/value pair at https://cid-resolver.rddl.io with CID being the key and the value being a valid URL returning the CID-data for the given CID.
-1. All notarized CIDs can be looked up via https://cid-resolver.rddl.io.
-1. Given a CID, a valid download URL for the CID-data can be retrieved via the [cid-resolver](https://cid-resolver.rddl.io/docs)
-1. The CID-data can be retrieved by executing a GET request to the retrieved download URL
-1. the downloaded CID-data results in a CID that is equal to the one used for the lookup
+A challenge will expire after a certain amount of time.
+The signature has to be created in the following way:
+1. compute a hash of the challenge with sha256
+1. sign the computed hash with the private key related to the machine public key
 
+A sample implementation of the workflow can be found [here](https://github.com/rddl-network/0x21e8/blob/main/x21e8/utils/eddsa_auth.py)
 
-#### ***cid-resolver.rddl.io***
-Details about the restful service can be found at 
-* [API docs](https://cid-resolver.rddl.io/docs)
-* [Source code](https://github.com/rddl-network/cid-resolver)
-
-The CID resolver stores < CID, URL > pairs like
+### ***JWT***
+The JWT header is defined as 
 ```json
 {
-  "cid": "bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm",
-  "url": "https://bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm.ipfs.w3s.link"
+  "alg": "HS256",
+  "typ": "JWT"
 }
 ```
-and enables actors to lookup download links for CID-data for a given CID.
+
+The payload has the following structure
+```json
+{
+  "actor": <machine planetmint public key>@m2m.rddl.io,
+  "exp": <utc timestamp of expiration>
+}
 ```
-https://cid-resolver.rddl.io/entry/cid?cid=bafkreignwcoye67vn6edp23mj4llhpzzkgyuefu7xesjzjxcv2bz3p4nfm
-```
 
-#### ***CID-data resolver***
+The payload got explicitly defined so that it supports the M2M communication protocol.
+The initial authentication service is currently part of the [CID-resolver](https://github.com/rddl-network/cid-resolver) but will be migrated to ***auth.rddl.io***.
 
-Whatever DB/storage solution is use by the HW-03 or the operator. The only task being asked by the network is to resolve a CID to its CID-data.
-Hence, a simple service with the following API should be sufficient to suit the needs of the RDDL protocol:
-
-* GET /cid-data/<cid> 
 
 
 ## **Implementation**
