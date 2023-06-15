@@ -15,6 +15,7 @@ This REP defines the mechanisms that are utilized to let machines authenticate t
 
 
 ## **Problem Breakdown**
+A machine is only allowed to submit transactions if it has been attested to the RDDL network beforehand. A machine is attested with a transaction issued and signed by a HW-03 wallet.
 
 
 ## **Specification**
