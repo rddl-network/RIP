@@ -47,7 +47,11 @@ The AttestMachine message must contain the follwoing information:
   "machineId": <public key of master seed>,
   "issuerPlanetmint": <planetmint public key>,
   "issuerLiquid": <liquid public key>,
-  "cid": <cid of metadata describing the machine>
+  "metadata": {
+    "GPS": <position of the machine>,
+    "device": <information describing the machine>,
+    "assetDefinition": <attestation definition>
+  }
 }
 ```
 A machine can be queried by its ID, the planetmint public key or the liquid public key. This is to provide a mechanism to verify a machine has been registered.
