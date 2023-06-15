@@ -46,7 +46,7 @@ C4 is meant to provide a reusable optimal collaboration model for open source so
 
 1. The project SHALL use the GNU Affero General Public License.
 1. All contributions to the project source code ("patches") SHALL use the same license as the project.
-1. All contributors contributing a patch MUST do and understand the steps listed in [REP-3](../REP-3).
+1. All contributors contributing a patch MUST do and understand the steps listed in [REP-3](./rep3.md).
 
 ### 2.3. Patch Requirements
 
