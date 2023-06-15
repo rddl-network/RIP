@@ -12,7 +12,7 @@ This document describes a consensus-oriented specification system (COSS) for bui
 This specification is based on [unprotocols.org 2/COSS](https://rfc.unprotocols.org/2/) and on [EIP1 - EIP Purpose and Guidelines](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md).
 
 ## Change Process
-This document is governed by the [REP-1 (C4)](../REP-1/README.md).
+This document is governed by the [REP-1 (C4)](./rep1.md).
 
 ## Language
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) \[[RFC2119](https://tools.ietf.org/html/rfc2119)\] \[[RFC8174](https://tools.ietf.org/html/rfc8174)\] when, and only when, they appear in all capitals, as shown here.
@@ -128,7 +128,7 @@ value. Only Raw and Draft REPs can be deleted.
 A REP MUST have a single responsible editor, the only person
 who SHALL change the status of the REP through the lifecycle stages.
 
-A REP MAY also have additional contributors who contribute changes to it. It is RECOMMENDED to use the [C4 process](../REP-1/README.md) to maximize the scale and diversity of contributions.
+A REP MAY also have additional contributors who contribute changes to it. It is RECOMMENDED to use the [C4 process](./rep1.md) to maximize the scale and diversity of contributions.
 
 The editor is responsible for accurately maintaining the state of REPs and for handling all comments on the REP.
 
