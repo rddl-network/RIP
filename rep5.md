@@ -8,10 +8,10 @@ contributors:
 ```
 
 ## **Abstract**
-This REP defines the mechanisms that are utilized to let machines authenticate to RDDL infrastructure services.
+This REP defines the mechanism that is utilized to verify machines on RDDL infrastructure services throught attestation.
 
 ## **Motivation**
- The goal of this REP is to describe the demand for RDDL infrastructure services and give the conceptual overview how machines are able to authenticate.
+ The goal of this REP is to describe a Machine Registry that is utilized to store information about a device on chain that is vital to verifying that a machine is actually part of the network.
 
 
 ## **Problem Breakdown**
@@ -50,7 +50,8 @@ The AttestMachine message must contain the follwoing information:
   "metadata": {
     "GPS": <position of the machine>,
     "device": <information describing the machine>,
-    "assetDefinition": <attestation definition>
+    "assetDefinition": <attestation definition>,
+    "additionalDataCID": <cid of additional metadata>
   }
 }
 ```
