@@ -14,4 +14,4 @@ Short Name   | Title                                                         | T
 [REP-2](REP-2)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
 [REP-3](REP-3)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
 [REP-4](REP-4)   | HW-03 Requirements                                        | Standard | Raw        | Jürgen Eckel
-
+[REP-6](REP-6)   | Machine authentication                                    | Standard | Raw        | Jürgen Eckel
