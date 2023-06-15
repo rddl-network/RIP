@@ -10,8 +10,8 @@ The process to add or change a REP is the following:
 
 Short Name   | Title                                                         | Type     | Status     | Editor
 -------------|---------------------------------------------------------------|----------|------------|-------
-[REP-1](rep1.md)   | Collective Code Construction Contract                     | Meta     | Draft      | Jürgen Eckel
-[REP-2](rep2.md)   | Consensus-Oriented Specification System                   | Meta     | Draft      | Jürgen Eckel
-[REP-3](rep3.md)   | How to handle ALL pull requests                           | Meta     | Draft      | Jürgen Eckel
-[REP-4](rep4.md)   | HW-03 Requirements                                        | Standard | Raw        | Jürgen Eckel
-
+[REP-1](rep1.md)   | Collective Code Construction Contract                   | Meta     | Draft      | Jürgen Eckel
+[REP-2](rep2.md)   | Consensus-Oriented Specification System                 | Meta     | Draft      | Jürgen Eckel
+[REP-3](rep3.md)   | How to handle ALL pull requests                         | Meta     | Draft      | Jürgen Eckel
+[REP-4](rep4.md)   | HW-03 Requirements                                      | Standard | Raw        | Jürgen Eckel
+[REP-6](rep6.md)   | Machine Authentication - EdDSA                          | Standard | Raw        | Jürgen Eckel
