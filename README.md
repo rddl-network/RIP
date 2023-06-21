@@ -15,3 +15,5 @@ Short Name   | Title                                                         | T
 [REP-3](rep3.md)   | How to handle ALL pull requests                         | Meta     | Draft      | Jürgen Eckel
 [REP-4](rep4.md)   | HW-03 Requirements                                      | Standard | Raw        | Jürgen Eckel
 [REP-6](rep6.md)   | Machine Authentication - EdDSA                          | Standard | Raw        | Jürgen Eckel
+[REP-7]            | Trust Anchor                                            | Standard | Draft      | Jürgen Eckel
+[REP-8]            | Trust Anchor Registry                                   | Standard | Draft      | Jürgen Eckel
