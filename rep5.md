@@ -20,9 +20,9 @@ This REP defines the mechanism that is utilized to verify machines on RDDL infra
 * ***Machine Registry***
 
 Only attested machines are allowed to issue transactions on the RDDL network. The Machine Registry holds vital information about the attested machine or device. The following mechanisms are needed by the Machine Registry:
-
-1. Machine provisioning: The process of giving a machine a unique identity. This is done by creating a keypair with a mnemonic phrase. A machine owner is required to store the mnemonic phrase if a machine or device needs to be replaced. The seed that is used to create all necessary keys is derived from this phrase.
-2. Machine attestation: A machine will be attested to the RDDL network with a machine identity together with information about the machine or device and all public keys that are linked with it. This information contains the GPS location, device information and an asset definition and is signed by an identity providing device. 
+1. Machine Identity: A machine can only be attested to the RDDL network if it has a pre-attested Trust Anchor attache and is able to sign the JSON object of the attestation process with the Trust Anchor ID (machine identity). The Trust Anchor registry and Trust Anchors will be covered by REP-7 and REP-8.
+3. Machine provisioning: The process of giving a machine a unique identity. This is done by creating a key-pair with a mnemonic phrase. A machine owner is required to store the mnemonic phrase if a machine or device needs to be replaced. The seed that is used to create all necessary keys is derived from this phrase.
+4. Machine attestation: A machine will be attested to the RDDL network with a machine identity together with information about the machine or device and all public keys that are linked with it. This information contains the GPS location, device information and an asset definition and is signed by an identity providing device. 
 
 If a machine fails to function the owner can restore access with to the assets with the mnemonic phrase.
 
@@ -35,7 +35,7 @@ The machine registry service accepts these messages and queries:
 3. GetMachineByPlanetmintKey
 4. GetMachineByLiquidKey
 
-The AttestMachine message must contain the follwoing information:
+The AttestMachine message must contain the following information:
 ```json
 {
   "name": <Name of the asset>,
@@ -44,7 +44,6 @@ The AttestMachine message must contain the follwoing information:
   "issued": <yes/no>,
   "amount": <amount of tokens>,
   "precision": <precision of the token denomination>,
-  "machineId": <public key of master seed>,
   "issuerPlanetmint": <planetmint public key>,
   "issuerLiquid": <liquid public key>,
   "metadata": {
@@ -52,7 +51,9 @@ The AttestMachine message must contain the follwoing information:
     "device": <information describing the machine>,
     "assetDefinition": <attestation definition>,
     "additionalDataCID": <cid of additional metadata>
-  }
+  },
+  "machineId": <public-key of a pre-attested Trust-Anchor>,
+  "machineIDSig": <signature of this json object with the 'machineIDSig' set to an empty string ''>
 }
 ```
 A machine can be queried by its ID, the planetmint public key or the liquid public key. This is to provide a mechanism to verify a machine has been registered.
