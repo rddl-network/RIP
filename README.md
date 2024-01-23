@@ -17,3 +17,4 @@ Short Name   | Title                                                         | T
 [REP-6](rep6.md)   | Machine Authentication - EdDSA                          | Standard | Raw        | Jürgen Eckel
 [REP-7]            | Trust Anchor                                            | Standard | Draft      | Jürgen Eckel
 [REP-8]            | Trust Anchor Registry                                   | Standard | Draft      | Jürgen Eckel
+[REP-11](rep11.md) | Proof of Productivity                                   | Standard | Draft      | Jürgen Eckel
