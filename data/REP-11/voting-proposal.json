@@ -7,7 +7,7 @@
     {
       "subspace": "bank",
       "key": "SendEnabled",
-      "value": "[{\"denom\":\"PLMNT\",\"enabled\":true},{\"denom\":\"STAKE\",\"enabled\":true}]"
+      "value": "[{\"denom\":\"plmnt\",\"enabled\":true},{\"denom\":\"stake\",\"enabled\":true}]"
     }
 ]
  
