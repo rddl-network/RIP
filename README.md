@@ -19,3 +19,4 @@ Short Name   | Title                                                         | T
 [REP-8](rep8.md)   | Trust Anchor Registry                                   | Standard | Draft      | Jürgen Eckel
 [REP-9](rep9.md)   | Hardware Compatibility                                  | Standard | Draft      | Jürgen Eckel
 [REP-10](rep10.md) | Hardware Approval Process                               | Standard | Draft      | Jürgen Eckel
+[REP-11](rep11.md) | Proof of Productivity                                   | Standard | Draft      | Jürgen Eckel

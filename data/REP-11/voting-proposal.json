@@ -1,0 +1,13 @@
+[
+    {
+      "subspace": "bank",
+      "key": "DefaultSendEnabled",
+      "value": "false"
+    },
+    {
+      "subspace": "bank",
+      "key": "SendEnabled",
+      "value": "[{\"denom\":\"plmnt\",\"enabled\":true},{\"denom\":\"stake\",\"enabled\":true}]"
+    }
+]
+ 
