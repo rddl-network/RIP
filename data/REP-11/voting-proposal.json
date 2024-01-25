@@ -1,13 +1,32 @@
-[
-    {
-      "subspace": "bank",
-      "key": "DefaultSendEnabled",
-      "value": "false"
-    },
-    {
-      "subspace": "bank",
-      "key": "SendEnabled",
-      "value": "[{\"denom\":\"plmnt\",\"enabled\":true},{\"denom\":\"stake\",\"enabled\":true}]"
-    }
-]
- 
+{
+ "messages": [
+  {
+   "@type": "/cosmos.bank.v1beta1.MsgUpdateParams",
+   "authority": "plmnt10d07y265gmmuvt4z0w9aw880jnsr700j346q9d",
+   "params": {
+    "default_send_enabled": false
+   }
+  },
+  {
+   "@type": "/cosmos.bank.v1beta1.MsgSetSendEnabled",
+   "authority": "plmnt10d07y265gmmuvt4z0w9aw880jnsr700j346q9d",
+   "send_enabled": [
+     {
+       "denom": "plmnt",
+       "enabled": true
+     },
+     {
+       "denom": "stake",
+       "enabled": true
+     }
+   ],
+   "use_default_for": [
+     "crddl",
+     "stagedcrddl"
+   ]
+  }
+ ],
+ "deposit": "10000stake",
+ "title": "Vote on send enabled tokens",
+ "summary": "Only allow plmnt and stake tokens to be send"
+}
