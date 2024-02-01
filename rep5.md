@@ -2,7 +2,7 @@
 shortname: REP-5
 name: Machine Registry
 type: standard
-status: raw
+status: Stable
 editor: Lorenz Herzberger lorenzherzberger@gmail.com
 contributors:
 ```
@@ -39,11 +39,6 @@ The AttestMachine message must contain the following information:
 ```json
 {
   "name": <Name of the asset>,
-  "ticker": <Ticker symbol>,
-  "public_url": <url that is linked to the legal entity owning the machine>,
-  "issued": <yes/no>,
-  "amount": <amount of tokens>,
-  "precision": <precision of the token denomination>,
   "issuerPlanetmint": <planetmint public key>,
   "issuerLiquid": <liquid public key>,
   "metadata": {
@@ -53,7 +48,9 @@ The AttestMachine message must contain the following information:
     "additionalDataCID": <cid of additional metadata>
   },
   "machineId": <public-key of a pre-attested Trust-Anchor>,
-  "machineIDSig": <signature of this json object with the 'machineIDSig' set to an empty string ''>
+  "machineIDSig": <signature of this json object with the 'machineIDSig' set to an empty string ''>,
+  "type": <the type of machine>,
+  "address": <the machines address on planetmint>
 }
 ```
 A machine can be queried by its ID, the planetmint public key or the liquid public key. This is to provide a mechanism to verify a machine has been registered.

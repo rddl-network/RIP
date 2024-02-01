@@ -2,7 +2,7 @@
 shortname: REP-8
 name: Trust Anchor Registry
 type: standard
-status: draft
+status: Stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```

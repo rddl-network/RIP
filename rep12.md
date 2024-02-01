@@ -2,7 +2,7 @@
 shortname: REP-12
 name: On-Chain Governance
 type: standard
-status: draft
+status: stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```

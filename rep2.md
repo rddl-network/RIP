@@ -2,7 +2,7 @@
 shortname: REP-2
 name: Consensus-Oriented Specification System
 type: Meta
-status: Draft
+status: Stable
 editor: Jürgen Eckel <juergen@riddleandcode.com>
 contributors: JÜrgen Eckel <juergen@riddleandcode.com>
 ```
@@ -55,7 +55,7 @@ Every REP (including branches) carries a different number. New versions of the s
 ### REP template
 Each REP MUST customize and include this header:
 ````
-```
+```Draft
 shortname: [number/shortname]
 name: [Full name of the REP]
 type: [standard | informational | meta ]

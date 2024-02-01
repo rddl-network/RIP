@@ -1,8 +1,8 @@
 ```
-shortname: REP-1
+shortname: REP-11
 name: Proof of Productivity (PoP)
 type: standard
-status: draft
+status: Stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```

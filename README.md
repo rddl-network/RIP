@@ -10,14 +10,14 @@ The process to add or change a REP is the following:
 
 Short Name   | Title                                                         | Type     | Status     | Editor
 -------------|---------------------------------------------------------------|----------|------------|-------
-[REP-1](rep1.md)   | Collective Code Construction Contract                   | Meta     | Draft      | Jürgen Eckel
-[REP-2](rep2.md)   | Consensus-Oriented Specification System                 | Meta     | Draft      | Jürgen Eckel
-[REP-3](rep3.md)   | How to handle ALL pull requests                         | Meta     | Draft      | Jürgen Eckel
-[REP-4](rep4.md)   | HW-03 Requirements                                      | Standard | Raw        | Jürgen Eckel
-[REP-6](rep6.md)   | Machine Authentication - EdDSA                          | Standard | Raw        | Jürgen Eckel
-[REP-7](rep7.md)   | Trust Anchor                                            | Standard | Draft      | Jürgen Eckel
-[REP-8](rep8.md)   | Trust Anchor Registry                                   | Standard | Draft      | Jürgen Eckel
-[REP-9](rep9.md)   | Hardware Compatibility                                  | Standard | Draft      | Jürgen Eckel
-[REP-10](rep10.md) | Hardware Approval Process                               | Standard | Draft      | Jürgen Eckel
-[REP-11](rep11.md) | Proof of Productivity                                   | Standard | Draft      | Jürgen Eckel
-[REP-12](rep12.md) | On-Chain Governance                                     | Standard | Draft      | Jürgen Eckel
+[REP-1](rep1.md)   | Collective Code Construction Contract                   | Meta     | Stable      | Jürgen Eckel
+[REP-2](rep2.md)   | Consensus-Oriented Specification System                 | Meta     | Stable      | Jürgen Eckel
+[REP-3](rep3.md)   | How to handle ALL pull requests                         | Meta     | Stable      | Jürgen Eckel
+[REP-4](rep4.md)   | HW-03 Requirements                                      | Standard | Draft       | Jürgen Eckel
+[REP-6](rep6.md)   | Machine Authentication - EdDSA                          | Standard | Raw         | Jürgen Eckel
+[REP-7](rep7.md)   | Trust Anchor                                            | Standard | Draft       | Jürgen Eckel
+[REP-8](rep8.md)   | Trust Anchor Registry                                   | Standard | Stable      | Jürgen Eckel
+[REP-9](rep9.md)   | Hardware Compatibility                                  | Standard | Stable      | Jürgen Eckel
+[REP-10](rep10.md) | Hardware Approval Process                               | Standard | Stable      | Jürgen Eckel
+[REP-11](rep11.md) | Proof of Productivity                                   | Standard | Stable      | Jürgen Eckel
+[REP-12](rep12.md) | On-Chain Governance                                     | Standard | Stable      | Jürgen Eckel
