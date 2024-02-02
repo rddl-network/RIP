@@ -1,8 +1,8 @@
 ```
 shortname: REP-3
 name: How to handle ALL pull requests
-type: Meta
-status: Draft
+type: mceta
+status: Stable
 editor: Jürgen Eckel <juergen@riddleandcode.com> 
 ```
 
