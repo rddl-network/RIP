@@ -2,7 +2,7 @@
 shortname: REP-10
 name: Hardware Approval Process
 type: standard
-status: Stable
+status: stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```

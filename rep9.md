@@ -2,7 +2,7 @@
 shortname: REP-9
 name: Hardware Compatibility
 type: standard
-status: Stable
+status: stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```

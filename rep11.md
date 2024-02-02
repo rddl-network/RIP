@@ -2,7 +2,7 @@
 shortname: REP-11
 name: Proof of Productivity (PoP)
 type: standard
-status: Stable
+status: stable
 editor: Jürgen Eckel juergen@riddleandcode.com
 contributors:
 ```
