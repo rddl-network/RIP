@@ -2,7 +2,7 @@
 shortname: REP-2
 name: Consensus-Oriented Specification System
 type: meta
-status: Stable
+status: stable
 editor: Jürgen Eckel <juergen@riddleandcode.com>
 contributors: JÜrgen Eckel <juergen@riddleandcode.com>
 ```

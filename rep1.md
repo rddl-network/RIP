@@ -2,7 +2,7 @@
 shortname: REP-1
 name: Collective Code Construction Contract
 type: meta
-status: Stable
+status: stable
 editor: Jürgen Eckel <juergen@riddleandcode.com>
 contributors:
 ```

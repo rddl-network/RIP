@@ -2,7 +2,7 @@
 shortname: REP-5
 name: Machine Registry
 type: standard
-status: Stable
+status: stable
 editor: Lorenz Herzberger lorenzherzberger@gmail.com
 contributors:
 ```
