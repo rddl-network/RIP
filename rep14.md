@@ -8,26 +8,29 @@ contributors:
 ```
 
 ## **Abstract**
-This REP defines which message types should be secured by the ante handler (high frequency or role based) or in the message servers (application state based).
+This REP delineates the criteria for securing message types either through ante handlers (for high-frequency or role-based messages) or via message servers (for application state-based messages).
 
 ## **Motivation**
-The goal of this REP is to define a dogmatic outline for deciding if a message type should be blocked by an ante handler (i.e. before being gossiped to other validators) or by a message server thus writing the result of the message to the chain.
+The purpose of this REP is to establish a systematic framework for determining whether a message type should be intercepted by an ante handler (i.e., before dissemination to other validators) or by a message server, thereby committing the message's result to the chain.
 
 ## **Problem breakdown**
-Planetmint uses two distinct ways to block invalid messages from triggering a state change: 
+Planetmint employs two distinct methods to prevent invalid messages from instigating state changes:
+  
+  1. During the `CheckTx` phase, where messages are vetted by `Ante Handlers`.
+  2. During the `DeliverTx` phase, where messages undergo validation by `Message Servers`.
 
-1. during `CheckTx` when messages are validated by `Ante Handlers`
-2. during `DeliverTx` when messages are validated by `Message Servers`
+  The distinction lies in the fact that transactions are only propagated to other peers if they pass the `CheckTx` stage.
 
-The difference being that transactions are only gossiped to other peers if the `CheckTx` stage is passed.
 
 ### CheckTx (Ante Handler)
-When a node receives a transaction it sends it to the application with a `CheckTx` ABCI call. The application then validates the transaction using the Ante Handlers. If all checks are successful then it will be delivered to the mempool and thus broadcasted to other peers in the network. Otherwise the transaction will be discarded.
+Upon receiving a transaction, a node forwards it to the application via a `CheckTx` ABCI call. The application then validates the transaction using Ante Handlers. If all validations succeed, the transaction is added to the mempool and subsequently broadcasted to other peers. Otherwise, the transaction is discarded.
 
 ### DeliverTx (Message Servers)
-When a block is is proposed each full-node runs a `DeliverTx` ABCI call for each transaction in said block. The `Ante Handlers` are run again, however in addition to this the messages inside a transactiona are delivered to their respective message servers. Here additional checks can be made. If all checks are successful a state change will be triggered. Otherwise all state changes will be reverted.
+When a block is proposed, each full node executes a `DeliverTx` ABCI call for every transaction in the block. Ante Handlers are invoked once more, and in addition, the messages within a transaction are dispatched to their corresponding message servers. Further validations take place here. If all checks pass, a state change is enacted. Otherwise, all state changes are rolled back.
 
 ## **Specification**
-Since some transactions will be automatically triggered by machines in high frequencies it is preferred to block them before they are gossiped to other nodes. The same goes for restricted messages which are only allowed to be sent by validators. Thus these kinds of transactions shall be blocked by the `Ante Handler`.
+Given that certain transactions are automatically triggered by machines at high frequencies, it is preferable to intercept them before dissemination to other nodes. Similarly, restricted messages, which are exclusive to validators, should be intercepted preemptively. Hence, transactions of these types should be intercepted by the `Ante Handler`. All other message validations are to be performed on a per-message server basis.
 
-All other message validations shall be performed on a per message server basis.
+Files containing `Ante Handlers` responsible for checking role permissions should be renamed to `check_<role>...go`.
+
+Ante Handlers validating messages based on application state should be relocated to their respective message servers.
