@@ -22,3 +22,4 @@ Short Name   | Title                                                         | T
 [REP-10](rep10.md) | Hardware Approval Process                               | Standard | stable      | Jürgen Eckel
 [REP-11](rep11.md) | Proof of Productivity                                   | standard | stable      | Jürgen Eckel
 [REP-12](rep12.md) | On-Chain Governance                                     | standard | stable      | Jürgen Eckel
+[REP-14](rep14.md) | Security Concepts (Ante Handler vs Msg Server)          | standard | draft       | Lorenz Herzberger
