@@ -24,3 +24,4 @@ Short Name   | Title                                                         | T
 [REP-12](rep12.md) | On-Chain Governance                                     | standard | stable      | Jürgen Eckel
 [REP-14](rep14.md) | Security Concepts (Ante Handler vs Msg Server)          | standard | draft       | Lorenz Herzberger
 [REP-16](rep16.md) | Quality Assurance - Exceeding the scope of unit testing | standard | draft       | Jürgen Eckel
+[REP-17](rep17.md) | Grants - proposal, voting, execution                    | standard | draft       | Jürgen Eckel
